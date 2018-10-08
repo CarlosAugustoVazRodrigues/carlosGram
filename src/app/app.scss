@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,10 +14,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Fira+Sans:300');
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script|Fira+Sans:300");
 
 ion-content {
-  font-family: 'Fira Sans', sans-serif
+  font-family: "Fira Sans", sans-serif;
 }
 
 .auto-scroll .scroll-content {
@@ -26,5 +25,24 @@ ion-content {
 }
 
 .oleo-script {
-    font-family: 'Oleo Script', cursive;
+  font-family: 'Oleo Script', cursive;
+}
+
+.logo-title {
+  font-size: 3em;
+}
+
+page-login,
+page-signup {
+  ion-input {
+    background-color: #FAFAFA !important;
+    border: 1px solid #dbdbdb !important;
+    border-radius: 3px;
+    color: #999999 !important;
+    margin-bottom: 10px;
+  }
+  ion-input,
+  ion-button {
+    font-size: 0.8em !important;
+  }
 }
