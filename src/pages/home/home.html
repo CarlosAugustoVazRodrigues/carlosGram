@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      carlosgram
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title text-center class="oleo-script"> Fakegram {{user}}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="showSendPhoto()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-buttons>
+    
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  Progressive web apps
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-tabs>
+    <ion-tab tabIcon="home" [root]="photosTab"></ion-tab>
+    <ion-tab tabIcon="search" disable [root]="profileTab"></ion-tab>
+    <ion-tab tabIcon="add-circle" class="add-tab-icon" [root]="profileTab"></ion-tab>
+    <ion-tab tabIcon="heart" [root]="profileTab"></ion-tab>
+    <ion-tab tabIcon="contact" [root]="profileTab"></ion-tab>
+  </ion-tabs>
 </ion-content>
