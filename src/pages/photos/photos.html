@@ -1,11 +1,28 @@
 <ion-content class="auto-scroll">
-    <ion-card>        
-            <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="">
-        <ion-card-content>
+  <ion-grid fixed>
+    <ion-row align-items-center justify-content-center>
+      <ion-col col-12 col-sm-12 col-md-6>
+        <ion-card>
+          <img src="http://fpoimg.com/512?text=Imagem+Rápida" alt="">
+          <ion-card-content>
             <ion-card-title>
-                Título
+              Título aqui
             </ion-card-title>
-            <p>Mensagem aqui</p>
-        </ion-card-content>
-    </ion-card>
+            <p> Mensagem aqui</p>
+            <p><small>Postado hoje por <strong>Fakegram</strong> </small></p>
+          </ion-card-content>
+          <ion-row no-padding>
+            <ion-col>
+              <button ion-button clear small color="danger" icon-start>
+                <ion-icon name="pin">
+                </ion-icon>
+                Ver no mapa
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
