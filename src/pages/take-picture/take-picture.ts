@@ -12,9 +12,12 @@ export class TakePicturePage {
         private viewCtrl: ViewController,
         private modalCrtl: ModalController) {
     }
+
     takePicture(){
-        
+        let modal = this.modalCrtl.create(SendPhotoPage);
+        modal.present();
     }
+
     dismiss() {
         this.viewCtrl.dismiss();
     }

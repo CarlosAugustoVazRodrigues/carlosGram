@@ -1,14 +1,24 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title text-center class="oleo-script">Fakegram</ion-title>
-      <ion-buttons start>
-        <button ion-button (click)="dismiss()">
-          <ion-icon name="close"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="auto-scroll">
-   
-  </ion-content>
-  
+  <ion-toolbar>
+    <ion-title text-center class="oleo-script">Fakegram</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="auto-scroll">
+  <ion-card>
+    <ion-slides (ionSlideDedChange)="changeFilter()">
+      <ion-slide *ngFor="let filter of filters" text-center>
+        <img src="http://fpoimg.com/512?text=Imagem+Rápida" alt="" class="inkwell" style="widht:100%">
+        <small> {{filter}}</small>
+      </ion-slide>
+      <ion-slide *ngFor="let filter of filters" text-center>
+        <img src="http://fpoimg.com/512?text=Imagem+Rápida" alt="" class="inkwell" style="widht:100%">
+        <small> {{filter}}</small>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+</ion-content>
