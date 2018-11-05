@@ -11,14 +11,40 @@
 <ion-content class="auto-scroll">
   <ion-card>
     <ion-slides (ionSlideDedChange)="changeFilter()">
-      <ion-slide *ngFor="let filter of filters" text-center>
-        <img src="http://fpoimg.com/512?text=Imagem+Rápida" alt="" class="inkwell" style="widht:100%">
-        <small> {{filter}}</small>
+      <ion-slide  text-center>
+        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="inkwell" style="width:100%">
+        <small> inkwell</small>
       </ion-slide>
-      <ion-slide *ngFor="let filter of filters" text-center>
-        <img src="http://fpoimg.com/512?text=Imagem+Rápida" alt="" class="inkwell" style="widht:100%">
-        <small> {{filter}}</small>
+      <ion-slide  text-center>
+        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="willow" style="width:100%">
+        <small>willow</small>
+      </ion-slide>
+      <ion-slide text-center>
+        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="nashville" style="width:100%">
+        <small>nashville</small>
       </ion-slide>
     </ion-slides>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" placeholder="Título"> </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea placeholder="Mensagem" rows="3"> </ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name="pin">Ativar Localização</ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
   </ion-card>
+  <div padding>
+<button ion-button block large outline>Enviar</button>
+  </div>
 </ion-content>
