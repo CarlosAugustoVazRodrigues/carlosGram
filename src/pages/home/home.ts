@@ -3,6 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 
 import { PhotosPage } from '../photos/photos';
 import { TakePicturePage } from '../take-picture/take-picture';
+import {ProfilePage} from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,7 @@ export class HomePage {
     private navCtrl: NavController,
     private modalCtrl: ModalController) {
     this.photosTab = PhotosPage;
-    this.profileTab = PhotosPage;
+    this.profileTab = ProfilePage;
   }
 
   showSendPhoto() {
