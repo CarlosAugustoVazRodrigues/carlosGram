@@ -13,9 +13,34 @@ export class TakePicturePage {
         private modalCrtl: ModalController) {
     }
 
-    takePicture(){
-        let modal = this.modalCrtl.create(SendPhotoPage);
-        modal.present();
+    ionViewDidLoad() {
+        var video = <any>document.getElementById('video');
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                });
+        }
+    }
+    takePicture() {
+        var video = <any>document.getElementById('video');
+        var canvas = <any>document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, 320, 240);
+        video.classList.add('animated');
+        video.classList.add('flash');
+
+        setTimeout(()=>{
+            this.viewCtrl.dismiss();
+            let modal = this.modalCrtl.create(
+                SendPhotoPage,
+                {
+                    photo:canvas.toDataURL()
+                });
+
+                modal.present();                
+        },800)
     }
 
     dismiss() {

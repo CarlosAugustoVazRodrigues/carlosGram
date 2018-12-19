@@ -1,50 +1,54 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center class="oleo-script">Fakegram</ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="dismiss()">
+    <ion-toolbar>
+        <ion-title text-center class="oleo-script">Fakegram</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
         <ion-icon name="close"></ion-icon>
       </button>
-    </ion-buttons>
-  </ion-toolbar>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 <ion-content class="auto-scroll">
-  <ion-card>
-    <ion-slides (ionSlideDedChange)="changeFilter()">
-      <ion-slide  text-center>
-        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="inkwell" style="width:100%">
-        <small> inkwell</small>
-      </ion-slide>
-      <ion-slide  text-center>
-        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="willow" style="width:100%">
-        <small>willow</small>
-      </ion-slide>
-      <ion-slide text-center>
-        <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="nashville" style="width:100%">
-        <small>nashville</small>
-      </ion-slide>
-    </ion-slides>
+    <ion-card>
+        <ion-slides (ionSlideDedChange)="changeFilter()">
+            <ion-slide text-center>
+                <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="inkwell" style="width:100%">
+                <small> inkwell</small>
+            </ion-slide>
+            <ion-slide text-center>
+                <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="willow" style="width:100%">
+                <small>willow</small>
+            </ion-slide>
+            <ion-slide text-center>
+                <img src="http://www.wikimetal.com.br/wp-content/uploads/2018/03/David-Gilmour-600x350.jpg" alt="" class="nashville" style="width:100%">
+                <small>nashville</small>
+            </ion-slide>
+        </ion-slides>
 
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-input type="text" placeholder="Título"> </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-textarea placeholder="Mensagem" rows="3"> </ion-textarea>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-input type="text" placeholder="Título"> </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-textarea placeholder="Mensagem" rows="3"> </ion-textarea>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
 
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-start>
+        <ion-row no-padding>
+            <ion-col>
+                <button ion-button clear small color="danger" icon-start *ngIf="location == ''" (click)="getLocation()">
           <ion-icon name="pin">Ativar Localização</ion-icon>
         </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <div padding>
-<button ion-button block large outline>Enviar</button>
-  </div>
+                <button ion-button clear small color="danger" icon-start *ngIf="location != ''">
+          <ion-icon name="pin">{{location}}</ion-icon>
+        </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <div padding>
+        <button ion-button block large outline>Enviar</button>
+    </div>
+
 </ion-content>
