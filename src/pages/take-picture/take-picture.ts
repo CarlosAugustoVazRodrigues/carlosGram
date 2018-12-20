@@ -18,7 +18,7 @@ export class TakePicturePage {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then((stream) => {
-                    video.src = window.URL.createObjectURL(stream);
+                    video.srcObject = stream;
                     video.play();
                 });
         }
