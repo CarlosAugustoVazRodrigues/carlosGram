@@ -15,12 +15,10 @@
                         <ion-col>
                             <button ion-button clear small color="danger" icon-start *ngIf="photo.location != ''" (click)="showMap(photo.location)"><ion-icon name='pin'></ion-icon> Ver no Mapa</button>
                             <button ion-button clear small color="danger" icon-start *ngIf="photo.location == ''"><ion-icon name='pin'></ion-icon> Localização não Disponível</button>
-
                         </ion-col>
                     </ion-row>
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
-
 </ion-content>

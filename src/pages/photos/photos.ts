@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { LoadingController, Loading } from 'ionic-angular';
+import { LoadingController,ModalController } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
-import { Observable } from 'rxjs';
+import { ShowMapPage } from "../show-map/show-map";
+
 
 @Component({
   selector: 'page-photos',
@@ -13,7 +14,8 @@ export class PhotosPage {
 
   constructor(
     db: AngularFireDatabase,
-    private loaderCtrl: LoadingController) {
+    private loaderCtrl: LoadingController,
+    private modalCtrl:ModalController) {
 
     let loader = this.loaderCtrl.create({ content: "Carregando ..." });
     loader.present();
@@ -25,6 +27,10 @@ export class PhotosPage {
       console.log("Faió: ",error);
     });
   
+  }
+  showMap(location){
+    let modal = this.modalCtrl.create(ShowMapPage, {location: location});
+    modal.present();
   }
 
 }
